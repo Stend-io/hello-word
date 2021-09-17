@@ -2,6 +2,10 @@
   "name": "@stend-io/byd-shared-tools",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stend-io/hello-word.git"
+  },
   "files": [
     "dist/",
     "index.js"
