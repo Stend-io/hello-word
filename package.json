@@ -6,6 +6,9 @@
     "dist/",
     "index.js"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "clean:libs": "lerna run clean",
     "lint:ci": "eslint --ext .js,.jsx,.ts,.tsx ./ --quiet",
