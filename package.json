@@ -1,0 +1,39 @@
+{
+  "name": "@stend-io/byd-shared-tools",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "index.js"
+  ],
+  "scripts": {
+    "clean:libs": "lerna run clean",
+    "lint:ci": "eslint --ext .js,.jsx,.ts,.tsx ./ --quiet",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "lint:qfix": "eslint . --ext .js,.ts --quiet --fix",
+    "lint:pretty": "prettier --write",
+    "bootstrap:libs": "lerna bootstrap",
+    "build:lib": "tsc --p tsconfig.json",
+    "publish": "npm publish"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "linter",
+    "Beyond",
+    "Hooks",
+    "Git Hooks",
+    "typescript",
+    "DigitalSite"
+  ],
+  "engines": {
+    "node": "^8.10.0 || ^10.13.0 || >=11.10.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1",
+    "lerna": "^4.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,34 @@
+name: Release independent Lerna Beyond shared tools libraries
+
+on:
+  push:
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+
+      - run: npm install
+
+      - name: Setup Node with GITHUB Registry
+        uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@stend-io'
+
+      - name: Git Config
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Run Lerna BOOTSTRAP, RELEASE, BUILD and PUBLISH
+        run: |
+          npm run build:lib
+          npm run publish:libs
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
