@@ -30,7 +30,7 @@ jobs:
       - name: Run Lerna BOOTSTRAP, RELEASE, BUILD and PUBLISH
         run: |
           npm run build:lib
-          npm run publish:libs
+          npm run publish:lib
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

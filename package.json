@@ -15,7 +15,7 @@
     "lint:pretty": "prettier --write",
     "bootstrap:libs": "lerna bootstrap",
     "build:lib": "tsc --p tsconfig.json",
-    "publish": "npm publish"
+    "publish:lib": "npm publish"
   },
   "keywords": [
     "eslint",
