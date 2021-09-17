@@ -12,7 +12,7 @@ jobs:
           all_commits: true
           all_tags: true
           fetch-depth: 0
-      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - run: git fetch origin
 
       - run: npm install
 
